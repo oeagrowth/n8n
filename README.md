@@ -1,21 +1,31 @@
-# n8n template
+# Casa da Fulana
 
-This template deploys a self-hosted version of [n8n](https://n8n.io/). Internally it uses a PostgreSQL database to store the data.
+Aplicação React + Supabase para controle de medicamentos.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/r2SNX_?referralCode=fKo7dw)
+## Setup
 
-## ✨ Features
+1. Instale dependências:
 
-- n8n
-- PostgreSQL
+```sh
+npm install
+```
 
-## 💁‍♀️ How to use
+2. Configure variáveis de ambiente em `.env` a partir de `.env.example`.
 
-- Click the Railway button 👆
-- Add the required environment variables
-- Deploy
+3. Execute em desenvolvimento:
 
-## 📝 Notes
+```sh
+npm run dev
+```
 
-- Source image: https://hub.docker.com/r/n8nio/n8n
-- Docs: https://docs.n8n.io/
+## Banco de Dados
+
+O arquivo `supabase/schema.sql` contém a estrutura e os seeds iniciais do banco.
+
+## Alias
+
+O alias `@` aponta para `src/` e é configurado em `tsconfig.json` e `vite.config.ts`.
+
+## Consulta de dados
+
+A aplicação usa [`@tanstack/react-query`](https://tanstack.com/query/latest) para buscar dados do Supabase. A tela inicial mostra o nome da casa, lista de pessoas e lista de medicamentos com o tipo (CONTÍNUO/ESPORÁDICO).
